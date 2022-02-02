@@ -7,6 +7,8 @@ use user - to create a db
 
 db.createCollecton('user') - to create a collection named user
 
+show collections -to view collections
+
 db.user.insert({"name":"shebin",palce:"wayanad"}) - to insert values to a collection named user
 
 db.user.find() - to view values inside collection
@@ -20,3 +22,36 @@ output:-{"_id" : ObjectId("61fa976047873020e7f49008"), "name" : "shebin", "place
 	"place" : "wayanad"
 }
 > 
+
+> db dropDatabase() - to delete a database
+
+to insert many values to a collection
+> db.stud.insertMany([{name:"shebin",age:20,palce:"wayanad"},{name:"fazil",age:30}])
+
+
+to find  a documants which name "shebin"
+> db.stud.find({name:"shebin"}).pretty()
+{
+	"_id" : ObjectId("61faa00fb37f51e92775eaa8"),
+	"name" : "shebin",
+	"age" : 20,
+	"palce" : "wayanad"
+}
+
+
+to find a person age grater than 25
+> db.stud.find({"age":{$gt:25}}).pretty()
+{
+	"_id" : ObjectId("61faa00fb37f51e92775eaa9"),
+	"name" : "fazil",
+	"age" : 30
+}
+
+update
+> db.stud.update({age:"15"},{$set:{age:16}})
+
+remove a doc
+> db.stud.remove({name:"fazil"})
+
+
+
