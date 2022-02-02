@@ -1,0 +1,22 @@
+mongo - to start
+exit - to exit
+
+show dbs - to view db's
+
+use user - to create a db
+
+db.createCollecton('user') - to create a collection named user
+
+db.user.insert({"name":"shebin",palce:"wayanad"}) - to insert values to a collection named user
+
+db.user.find() - to view values inside collection
+output:-{"_id" : ObjectId("61fa976047873020e7f49008"), "name" : "shebin", "place" : "wayanad" }
+
+
+> db.user.find().pretty() - to view like following
+{
+	"_id" : ObjectId("61fa976047873020e7f49008"),
+	"name" : "shebin",
+	"place" : "wayanad"
+}
+> 
